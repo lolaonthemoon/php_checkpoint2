@@ -17,8 +17,14 @@
     </div>
     <div class="form-group">
         <label for="accessory">Accessory</label>
-        <select name="accessory" id="accessory">
-            {# TODO Add accessories options here #}
+        <select name="id_accessory" id="accessory">
+            {% for accessory in accessories %}
+            {% if accessory.id == cupcake.id_accessory %}
+            <option value="{{accessory.id}}" selected>{{accessory.name}}</option>
+            {% else %}
+            <option value="{{accessory.id}}">{{accessory.name}}</option>
+            {% endif %}
+            {% endfor %}
         </select>
 
     </div>

@@ -2,7 +2,19 @@
 
 {% block content %}
     <div class="main-container">
-        <h1>My accessories</h1>
-        {# TODO Display all accessories here #}
-    </div>
+        <h1>My accessories List</h1>
+
+   
+        <div class="instructions">
+            {% for accessory in accessories %}
+            <h2>🧁 {{accessory.id}} - {{accessory.name}}</h2>
+            <li>
+                "{{accessory.url}}"
+            </li>
+     
+              {% endfor %}
+              <h2>⭐ End Of the list</h2>
+        </div>
+           
+          
 {% endblock %}
